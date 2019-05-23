@@ -7,6 +7,8 @@
 
 ## springboot
 
+## java8
+
 ## gradle
 
 ## jpa
@@ -16,3 +18,12 @@
 ## mysql
 
 ## bootstrap
+
+## swagger
+
+## intellij
+
+## tomcat
+
+## jenkins
+
