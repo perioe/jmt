@@ -3,13 +3,13 @@
 
 ## git : https://opentutorials.org/course/2708
 
-## sourcetree (gitkraken)
+## sourcetree
 
 ## springboot
 
 ## java8
 
-## gradle
+## gradle vs maven
 
 ## jpa
 
