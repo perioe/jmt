@@ -1,13 +1,13 @@
-package com.jmt.jmt;
+package com.jmt.core.jmtcore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JmtApplication {
+public class JmtCoreApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JmtApplication.class, args);
+        SpringApplication.run(JmtCoreApplication.class, args);
     }
 
 }

@@ -1,35 +1,56 @@
-plugins {
-    id 'org.springframework.boot' version '2.1.6.RELEASE'
-    id 'java'
-    id 'war'
+
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+
+    group = 'com.jmt'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
+
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+
 }
-
-apply plugin: 'io.spring.dependency-management'
-
-group = 'com.jmt'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
+//sonarqube {
+//    properties {
+//        property "sonar.projectKey", "jmt"
+//        property "sonar.sources", "src/main/java"
+//        property "sonar.projectName", "jmt"
+//        property "sonar.sourceEncoding", "UTF-8"
+//
+//        property "sonar.host.url", "http://sonarqube.abouthere.kr"
+//        property "sonar.language", "java"
+//        property "sonar.sourceEncoding", "UTF-8"
+//        property "sonar.exclusions", "**/*Test*.*, **/Q*.JAVA"
+//        property "sonar.test.inclusions", "**/*Test.groovy, **/*Test.java"
+//        property "sonar.coverage.exclusions", "**/*Test*.*, **/Q*.java"
+//    }
+//}
+project(':jmt-api') {
+    dependencies {
+        compile project(':jmt-core')
     }
 }
 
-repositories {
-    mavenCentral()
-}
+//project(':jmt-web') {
+//    dependencies {
+//        compile project(':jmt-core')
+//    }
+//}
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-batch'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'mysql:mysql-connector-java'
-    annotationProcessor 'org.projectlombok:lombok'
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.batch:spring-batch-test'
-}

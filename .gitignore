@@ -1,0 +1,5 @@
+.gradle
+.idea
+jmt-api/build
+jmt-core/build
+out
